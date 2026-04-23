@@ -110,7 +110,6 @@ The rule triggered after running `gobuster`, which generated a high volume of 40
 
 Challenges and Lessons Learned
 
-Log Parsing Limitations: Initial attempts to use File Integrity Monitoring (FIM) for cron persistence detection encountered incomplete field mapping. This highlighted the importance of understanding raw log formats and being prepared to pivot detection strategies—a valuable real-world SOC skill.
 
 Data View Configuration: Ensuring the correct data view (logs-*) was selected in Kibana Discover was critical for viewing ingested logs.
 
