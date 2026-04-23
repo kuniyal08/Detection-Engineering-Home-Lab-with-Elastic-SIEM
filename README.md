@@ -1,4 +1,4 @@
-# Detection Engineering Home Lab with Elastic SIEM
+# Elastic SIEM Home Lab for Threat Detection
 
 ## Overview
 This project documents the configuration of a Security Information and Event Management (SIEM) lab using Elastic Cloud. The lab simulates a real-world Security Operations Center (SOC) environment to practice threat detection, log analysis, and detection rule engineering. Two attack scenarios were successfully executed and detected, demonstrating practical skills relevant to an L1 SOC Analyst role.
@@ -8,6 +8,8 @@ This project documents the configuration of a Security Information and Event Man
 - **Log Shipper:** Elastic Agent (Fleet-managed)
 - **Monitored Endpoint:** Ubuntu Server 22.04 LTS (VirtualBox VM)
 - **Attacker Machine:** Kali Linux (VirtualBox VM)
+
+---
 
 ## Detection Engineering Exercises
 
@@ -21,8 +23,8 @@ An adversary attempts to gain unauthorized access to a server by systematically 
 2. Used `hydra` from Kali Linux to launch a dictionary attack:
    ```bash
    hydra -l testuser -P /usr/share/wordlists/rockyou.txt ssh://<UBUNTU-IP> -t 4
-
-   Detection Rule Configuration (Kibana)
+   
+Detection Rule Configuration (Kibana)
 
     Rule Type: Custom Query
 
@@ -48,10 +50,12 @@ Alert Validation
 The rule successfully triggered within minutes of initiating the hydra attack. The alert contained the source IP, target user, and count of failed attempts.
 Screenshots
 Description	Image
-Hydra brute force attack in progress	images/1-2-hydra-attack.png
-Failed SSH logs in Kibana Discover	images/1-3-failed-logs-discover.png
-Detection rule configuration	images/1-4-rule-configuration.png
-Triggered alert in Security > Alerts	images/1-5-alert-triggered.png
+Hydra brute force attack in progress	https://Images/2.x-HydraScreenshot_2026-04-21_02_51_45.png
+Failed SSH logs in Kibana Discover	https://Images/1.3-Brute-Force-Attack-Log.png
+Detection rule configuration (General)	https://Images/2026-04-21_12-36-About-Rule-1.2.png
+MITRE ATT&CK Technique Mapping	https://Images/2026-04-21_12-36-Mitre-Technique.png
+Detection rule creation page	https://Images/1.1Create%2520Detection%2520Rule.png
+Triggered alert in Security > Alerts	https://Images/2026-04-21_12-40-Alert-Page1.4.png
 2. Web Application Scanning Detection
 Attack Description
 
@@ -98,10 +102,12 @@ Alert Validation
 The rule triggered after running gobuster, which generated a high volume of 404 responses. The alert correctly identified the scanning source IP and the targeted web paths.
 Screenshots
 Description	Image
-Apache installation and status	images/2-1-apache-install.png
-Web scanning tools output (nmap, nikto, gobuster)	images/2-3-web-scans.png
-Detection rule configuration	images/2-4-web-rule.png
-Triggered alert in Security > Alerts	images/2-5-web-alert.png
+Apache installation and status	https://Images/2026-04-21_12-44-Create-Apache2.1.png
+Apache integration confirmed in Fleet	https://Images/2026-04-21_12-47-2.2-Apache-integrated.png
+Web scanning tools output (nmap, nikto, gobuster)	https://Images/2.x-Nmap-Nikita-Gobustor-Screenshot_2026-04-21_03_21_30.png
+Detection rule creation step 1	https://Images/2026-04-21_12-58-2.3-Create-Rule-Vuln-Scan.png
+Detection rule creation step 2	https://Images/2026-04-21_12-59-2.4-Create-Rule-Vuln-Scan.png
+Triggered alert in Security > Alerts	https://Images/2026-04-21_13-02-2.5-Alerts.png
 Key Skills Demonstrated
 
     Deployment and configuration of Elastic Cloud SIEM
