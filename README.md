@@ -65,7 +65,7 @@ An attacker performs reconnaissance against a web server by scanning for open po
     sudo systemctl start apache2
     ```
 
-2. From Kali Linux, executed the following scanning tools:
+2. From the Kali Linux VM, executed the following scanning tools:
    - **Nmap:** `nmap -sV -p 80 <UBUNTU-IP>`
    - **Nikto:** `nikto -h http://<UBUNTU-IP>`
    - **Gobuster:** `gobuster dir -u http://<UBUNTU-IP> -w /usr/share/wordlists/dirb/common.txt`
