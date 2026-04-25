@@ -16,7 +16,7 @@ This project documents the configuration of a Security Information and Event Man
 An adversary attempts to gain unauthorized access to a server by systematically trying a list of passwords against a valid username via the SSH service.
 
 #### Simulation Steps
-1. Created a test user account on the Ubuntu server with a weak password.
+1. Created a test user account on the Ubuntu server VM with a weak password.
 2. Used `hydra` from Kali Linux to launch a dictionary attack:
 
     ```bash
